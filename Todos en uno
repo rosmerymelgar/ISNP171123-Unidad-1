@@ -1,0 +1,75 @@
+using System;
+
+class Program
+{
+    static void Main()
+    {
+        // Punto 1
+        Console.WriteLine("Ingrese un número (0 para salir):");
+        int num = int.Parse(Console.ReadLine());
+        while (num != 0)
+        {
+            if (num > 0)
+            {
+                Console.WriteLine("El número es positivo.");
+            }
+            else
+            {
+                Console.WriteLine("El número es negativo.");
+            }
+            Console.WriteLine("Ingrese un número (0 para salir):");
+            num = int.Parse(Console.ReadLine());
+        }
+
+        // Punto 2
+        Console.WriteLine("Imprimiendo números del 1 al 10 con While:");
+        int i = 1;
+        while (i <= 10)
+        {
+            Console.WriteLine(i);
+            i++;
+        }
+
+        // Punto 3
+        Console.WriteLine("Ingrese números positivos (0 para salir):");
+        int suma = 0;
+        do
+        {
+            num = int.Parse(Console.ReadLine());
+            if (num > 0)
+            {
+                suma += num;
+            }
+        } while (num != 0);
+        Console.WriteLine($"La suma de los números positivos es: {suma}");
+
+        // Punto 4
+        Console.WriteLine("Ingrese 5 números:");
+        suma = 0;
+        int contador = 0;
+        do
+        {
+            num = int.Parse(Console.ReadLine());
+            suma += num;
+            contador++;
+        } while (contador < 5);
+        Console.WriteLine($"La sumatoria de los números es: {suma}");
+
+        // Punto 5
+        Console.WriteLine("Ingrese números (0 para finalizar):");
+        suma = 0;
+        int cantidadNumeros = 0;
+        int numero;
+        do
+        {
+            numero = int.Parse(Console.ReadLine());
+            if (numero != 0)
+            {
+                suma += numero;
+                cantidadNumeros++;
+            }
+        } while (numero != 0);
+        double promedio = (double)suma / cantidadNumeros;
+        Console.WriteLine($"El promedio de los números ingresados es: {promedio}");
+    }
+}
