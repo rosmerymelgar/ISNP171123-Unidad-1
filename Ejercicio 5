@@ -1,0 +1,44 @@
+using System;
+
+class Program
+{
+    static void Main()
+    {
+        int count = 0;
+        double sum = 0;
+        double number;
+
+        Console.WriteLine("Enter numbers (0 to finish):");
+
+        while (true)
+        {
+            string input = Console.ReadLine();
+            bool isValidInput = double.TryParse(input, out number);
+
+            if (isValidInput)
+            {
+                if (number == 0)
+                {
+                    break;
+                }
+
+                sum += number;
+                count++;
+            }
+            else
+            {
+                Console.WriteLine("Invalid input. Please enter a number.");
+            }
+        }
+
+        if (count > 0)
+        {
+            double average = sum / count;
+            Console.WriteLine("The average of the numbers is: " + average);
+        }
+        else
+        {
+            Console.WriteLine("No numbers were entered.");
+        }
+    }
+}
