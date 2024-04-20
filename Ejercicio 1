@@ -1,0 +1,23 @@
+using System;
+
+class Program
+{
+    static void Main()
+    {
+        int number;
+
+        Console.WriteLine("Enter numbers. Type 0 to stop.");
+
+        number = Convert.ToInt32(Console.ReadLine());
+
+        while (number != 0)
+        {
+            if (number > 0)
+                Console.WriteLine("The number is positive.");
+            else
+                Console.WriteLine("The number is negative.");
+
+            number = Convert.ToInt32(Console.ReadLine());
+        }
+    }
+}
