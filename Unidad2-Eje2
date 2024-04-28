@@ -1,0 +1,44 @@
+using System;
+using System.Windows.Forms;
+
+namespace ConversorUnidades
+{
+    public partial class MainForm : Form
+    {
+        public MainForm()
+        {
+            InitializeComponent();
+        }
+
+        private void btnConvertir_Click(object sender, EventArgs e)
+        {
+            if (txtMetros.Text != "")
+            {
+                double metros = double.Parse(txtMetros.Text);
+
+                // Convertir metros a yardas, centímetros y milímetros
+                double yardas = metros * 1.09361;
+                double centimetros = metros * 100;
+                double milimetros = metros * 1000;
+
+                // Mostrar los resultados en los TextBox correspondientes
+                txtYardas.Text = yardas.ToString();
+                txtCentimetros.Text = centimetros.ToString();
+                txtMilimetros.Text = milimetros.ToString();
+            }
+            else
+            {
+                MessageBox.Show("Por favor, ingrese un valor en metros.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+        private void btnLimpiar_Click(object sender, EventArgs e)
+        {
+            // Limpiar todos los campos
+            txtMetros.Clear();
+            txtYardas.Clear();
+            txtCentimetros.Clear();
+            txtMilimetros.Clear();
+        }
+    }
+}
