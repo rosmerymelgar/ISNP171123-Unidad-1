@@ -1,0 +1,44 @@
+namespace ISNP171123_Unidad_2_Ejercicio_4
+{
+    public partial class Form1 : Form
+    {
+        public Form1()
+        {
+            InitializeComponent();
+        }
+
+        private void btnCalcular_Click(object sender, EventArgs e)
+        {
+            {
+                // Obtener el valor unitario y la cantidad ingresados por el usuario
+                if (!decimal.TryParse(txtValorUnitario.Text, out decimal valorUnitario) ||
+                    !int.TryParse(txtCantidad.Text, out int cantidad))
+                {
+                    MessageBox.Show("Por favor, ingrese valores numéricos válidos.");
+                    return;
+                }
+
+                // Calcular el total sin descuento
+                decimal totalSinDescuento = valorUnitario * cantidad;
+
+                // Calcular el descuento basado en el total sin descuento
+                decimal descuento = 0;
+                if (totalSinDescuento < 20000)
+                {
+                    descuento = totalSinDescuento * 0.15m; // 15% de descuento
+                }
+                else
+                {
+                    descuento = totalSinDescuento * 0.35m; // 35% de descuento
+                }
+
+                // Calcular el total a pagar restando el descuento al total sin descuento
+                decimal totalAPagar = totalSinDescuento - descuento;
+
+                // Mostrar el total a pagar al usuario
+                MessageBox.Show("Total a pagar: $" + totalAPagar.ToString("0.00"));
+            }
+        }
+    }
+}
+    
