@@ -1,0 +1,29 @@
+namespace ISNP171123_Unidad_2_Ejercicio_10
+{
+    public partial class Form1 : Form
+    {
+        public Form1()
+        {
+            InitializeComponent();
+        }
+
+        private void btnIngresar_Click(object sender, EventArgs e)
+        {
+            {
+                // Obtener el nombre de usuario y la contraseña ingresados por el usuario
+                string usuario = txtUsuario.Text;
+                string contraseña = txtContraseña.Text;
+
+                // Verificar si la contraseña es "ugb"
+                if (contraseña.ToLower() == "ugb")
+                {
+                    MessageBox.Show("Bienvenido, " + usuario + "!");
+                }
+                else
+                {
+                    MessageBox.Show("Acceso denegado");
+                }
+            }
+        }
+    }
+}
