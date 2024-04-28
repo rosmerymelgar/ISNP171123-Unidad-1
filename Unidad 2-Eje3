@@ -1,0 +1,87 @@
+using System;
+using System.Windows.Forms;
+
+namespace Calculadora
+{
+    public partial class MainForm : Form
+    {
+        public MainForm()
+        {
+            InitializeComponent();
+        }
+
+        private void btnSumar_Click(object sender, EventArgs e)
+        {
+            Calcular('+');
+        }
+
+        private void btnRestar_Click(object sender, EventArgs e)
+        {
+            Calcular('-');
+        }
+
+        private void btnMultiplicar_Click(object sender, EventArgs e)
+        {
+            Calcular('*');
+        }
+
+        private void btnDividir_Click(object sender, EventArgs e)
+        {
+            Calcular('/');
+        }
+
+        private void btnPotencia_Click(object sender, EventArgs e)
+        {
+            Calcular('^');
+        }
+
+        private void btnRaizCuadrada_Click(object sender, EventArgs e)
+        {
+            double numero;
+            if (double.TryParse(txtNumero.Text, out numero))
+            {
+                double resultado = Math.Sqrt(numero);
+                txtResultado.Text = resultado.ToString();
+            }
+            else
+            {
+                MessageBox.Show("Ingrese un número válido.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+        private void Calcular(char operador)
+        {
+            double numero1, numero2;
+            if (double.TryParse(txtNumero1.Text, out numero1) && double.TryParse(txtNumero2.Text, out numero2))
+            {
+                double resultado = 0;
+                switch (operador)
+                {
+                    case '+':
+                        resultado = numero1 + numero2;
+                        break;
+                    case '-':
+                        resultado = numero1 - numero2;
+                        break;
+                    case '*':
+                        resultado = numero1 * numero2;
+                        break;
+                    case '/':
+                        if (numero2 != 0)
+                            resultado = numero1 / numero2;
+                        else
+                            MessageBox.Show("No se puede dividir por cero.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        break;
+                    case '^':
+                        resultado = Math.Pow(numero1, numero2);
+                        break;
+                }
+                txtResultado.Text = resultado.ToString();
+            }
+            else
+            {
+                MessageBox.Show("Ingrese números válidos en ambos campos.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+    }
+}
