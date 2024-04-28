@@ -1,0 +1,33 @@
+namespace ISNP171123_Unidad_2_Ejercicio_7
+{
+    public partial class Form1 : Form
+    {
+        public Form1()
+        {
+            InitializeComponent();
+        }
+
+        private void btnCalcular_Click(object sender, EventArgs e)
+        {
+            {
+                // Variables para almacenar la suma y la cadena de los números
+                int suma = 0;
+                string numeros = "";
+
+                // Calcular la suma de los primeros 100 números naturales
+                for (int i = 1; i <= 100; i++)
+                {
+                    suma += i;
+                    numeros += i.ToString();
+                    if (i < 100)
+                    {
+                        numeros += " + ";
+                    }
+                }
+
+                // Mostrar la suma y los números
+                MessageBox.Show("La suma de los primeros 100 números naturales es: " + suma.ToString() + "\n\nLos números son: " + numeros);
+            }
+        }
+    }
+}
