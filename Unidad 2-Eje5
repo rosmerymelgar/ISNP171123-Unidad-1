@@ -1,0 +1,29 @@
+namespace ISNP171123_Unidad_2_Ejercicio_5
+{
+    public partial class Form1 : Form
+    {
+        public Form1()
+        {
+            InitializeComponent();
+        }
+
+        private void Button1_Click(object sender, EventArgs e)
+        {
+            {
+                // Obtener las notas de los laboratorios
+                double lab1 = Convert.ToDouble(TextBox1.Text);
+                double lab2 = Convert.ToDouble(TextBox2.Text);
+                double lab3 = Convert.ToDouble(TextBox3.Text);
+
+                // Obtener la nota del parcial
+                double parcial = Convert.ToDouble(TextBox4.Text);
+
+                // Calcular el promedio final
+                double promedio = (lab1 + lab2 + lab3 + parcial) / 4;
+
+                // Mostrar el promedio final
+                label5.Text = "Promedio final: " + promedio.ToString();
+            }
+        }
+    }
+}
