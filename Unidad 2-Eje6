@@ -1,0 +1,87 @@
+namespace ISNP171123_Unidad_2_Ejercicio_6
+{
+    public partial class Form1 : Form
+    {
+        public Form1()
+        {
+            InitializeComponent();
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            {
+                int number = int.Parse(textBox1.Text);
+                string romanNumeral = "";
+
+                switch (number)
+                {
+                    case 1:
+                        romanNumeral = "I";
+                        break;
+                    case 2:
+                        romanNumeral = "II";
+                        break;
+                    case 3:
+                        romanNumeral = "III";
+                        break;
+                    case 4:
+                        romanNumeral = "IV";
+                        break;
+                    case 5:
+                        romanNumeral = "V";
+                        break;
+                    case 6:
+                        romanNumeral = "VI";
+                        break;
+                    case 7:
+                        romanNumeral = "VII";
+                        break;
+                    case 8:
+                        romanNumeral = "VIII";
+                        break;
+                    case 9:
+                        romanNumeral = "IX";
+                        break;
+                    case 10:
+                        romanNumeral = "X";
+                        break;
+                    case 11:
+                        romanNumeral = "XI";
+                        break;
+                    case 12:
+                        romanNumeral = "XII";
+                        break;
+                    case 13:
+                        romanNumeral = "XIII";
+                        break;
+                    case 14:
+                        romanNumeral = "XIV";
+                        break;
+                    case 15:
+                        romanNumeral = "XV";
+                        break;
+                    case 16:
+                        romanNumeral = "XVI";
+                        break;
+                    case 17:
+                        romanNumeral = "XVII";
+                        break;
+                    case 18:
+                        romanNumeral = "XVIII";
+                        break;
+                    case 19:
+                        romanNumeral = "XIX";
+                        break;
+                    case 20:
+                        romanNumeral = "XX";
+                        break;
+                    default:
+                        romanNumeral = "Invalid number";
+                        break;
+                }
+
+                label1.Text = romanNumeral;
+            }
+        }
+    }
+}
